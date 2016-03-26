@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#NOT USING THIS FILE ANYMORE
+
+
 #what pin are we interested in?
 PIN="$1"
 

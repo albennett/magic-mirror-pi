@@ -1,3 +1,5 @@
+#NOT USING THIS FILE ANYMORE
+
 #!/bin/sh
 
 #what pin are we interested in?
