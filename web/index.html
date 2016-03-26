@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <style>
+      html, body
+      {
+        background-color: #000000;
+        color: #CCCCCC;
+      }
+    </style>
+    <script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+      //var BASEURL = 'http://192.168.64.121';
+
+      var IS_LOADED = false;
+
+      var NODE = '/nodejs/#';
+      var OTHER = '/loading.html';
+
+      function checkStatus() {
+        //$('#frameMain').attr('src', BASEURL + ':3000/#');
+        $.getJSON('/nodejs/api/status', function(data) {
+          if(!IS_LOADED && data && data.isOK && data.isOK === true) {
+            IS_LOADED = true;
+            console.log('setting SRC');
+            $('#frameMain').attr('src', '/nodejs/#');
+          } else {
+            var src = $('#frameMain').attr('src');
+            console.log('current: ' + src);
+            if(data && typeof(data.gpioCenterVideo) != 'undefined' && data.gpioCenterVideo === 0 && src != NODE){
+              console.log('changing to node');
+              $('#frameMain').attr('src',NODE);
+            }
+            else if(data && typeof(data.gpioCenterVideo) != 'undefined' && data.gpioCenterVideo === 1 && src != OTHER) {
+              console.log('changing to other');
+              $('#frameMain').attr('src',OTHER);
+            }
+          }
+          console.log(JSON.stringify(data));
+          //console.log(data.gpioCenterVideo);
+        });
+      }
+
+      $(document).ready(function() {
+        $('#frameMain').attr('src', 'loading.html');
+        setInterval(function() {
+          checkStatus();
+        }, 2000);
+      });
+    </script>
+  </head>
+    <frameset cols="100%">
+      <frame id="frameMain" src="blank.html"/>
+    </frameset>
+</html>

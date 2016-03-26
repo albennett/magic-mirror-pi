@@ -1,0 +1,190 @@
+/* (1600x900) HD+ Display */
+@media screen and (max-width: 1080px) {
+  /*efef*/
+    /* insert styles here */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+  #map {
+    height: 11%;
+    width: 48%;
+    position:absolute;
+    bottom:0;
+    margin-left: 90px;
+    margin-bottom: 69px;
+  }
+
+  #titles{
+    position: absolute;
+    visibility: visible;
+    left: 54%;
+    top: 76%;
+    width: 37%;
+    z-index: 200;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left:10px;
+    color: #efefef;
+  }
+
+  .inline{
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .high-low{
+    padding:7px;
+  }
+
+  #five-day-forecast{
+    position: absolute;
+    visibility: visible;
+    left: 68%;
+    top: 86%;
+    z-index: 200;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #efefef;
+  }
+
+  .time{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    color: #efefef;
+  }
+
+  .temp{
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    color: #efefef;
+  }
+
+  .skycon{
+    position: absolute;
+    right: 15%;
+    top: 4%;
+  }
+
+  .summary{
+    position: absolute;
+    right:6%;
+    top:9%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #efefef;
+  }
+
+  .day{
+    position: absolute;
+    left: 6%;
+    top:9%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #efefef;
+  }
+
+  .date{
+    position: absolute;
+    left:6%;
+    top: 11.5%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #efefef;
+  }
+
+  .fa{
+    display: inline-block;
+    color: #efefef;
+  }
+
+  .quote{
+    text-align: center;
+    width: 83%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 291px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #efefef;
+  }
+
+  .joke{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #efefef;
+  }
+
+  #output{
+    position: absolute;
+    visibility: visible;
+    right: 55%;
+    top: 76%;
+    width: 37%;
+    z-index: 200;
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    background-color:transparent;
+    font-size: 18px;
+    border: none;
+    color: #efefef;
+
+  }
+
+  .events{
+    position: absolute;
+    bottom: 22.5%;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    left: 9%;
+    color: #efefef;
+  }
+
+  .news-title{
+    padding-left: 10px;
+    color: #efefef;
+  }
+
+  #authorize-button{
+    position: absolute;
+    bottom: 40%;
+    color: #efefef;
+  }
+
+#large-weather-icon {
+    font-size: 90px;
+    content: "\f02e";
+    color: white;
+}
+
+.cal{
+  color: white;
+}
+
+}
+/**/

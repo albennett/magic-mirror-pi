@@ -1,0 +1,6 @@
+conf
+server/node_modules
+server/public/vendor/
+.DS_Store
+._.DS_Store
+web/jquery-1.12.0.min.js

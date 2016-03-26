@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Smart Mirror</title>
+    <!-- every three hours to refresh -->
+    <meta http-equiv="refresh" content="10800">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+   <!-- <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" type="text/css" href="styles/raleway.css">
+    <link rel="stylesheet" href="styles/weather-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+  <div ng-view></div>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="vendor/moment/moment.js"></script>
+    <script src="vendor/lodash/dist/lodash.min.js"></script>
+    <script src="vendor/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/mirrorCtrl.js"></script>
+  </body>
+</html>

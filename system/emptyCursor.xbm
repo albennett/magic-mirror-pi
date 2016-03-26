@@ -1,0 +1,7 @@
+#define none_width 1
+#define none_height 1
+#define none_x_hot 0
+#define none_y_hot 0
+static unsigned char none_bits[] = {
+    0x00
+};

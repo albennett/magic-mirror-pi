@@ -1,0 +1,38 @@
+{
+  "name": "smart-mirror",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "serve": "nodemon server.js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albennett/magic-mirror-pi.git"
+  },
+  "keywords": [],
+  "author": "Amy Lee Bennett <amyleeannebennett@gmail.com> (https://www.amylee.co/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albennett/magic-mirror-pi/issues"
+  },
+  "homepage": "https://github.com/albennett/magic-mirror-pi#readme",
+  "dependencies": {
+    "angular-google-maps": "^2.3.2",
+    "apicache": "0.0.12",
+    "bower": "^1.7.7",
+    "express": "^4.13.4",
+    "google-auth-library": "^0.9.7",
+    "googleapis": "^2.1.7",
+    "jade": "^1.11.0",
+    "moment": "^2.11.2",
+    "pi-gpio": "0.0.8",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
+  }
+}

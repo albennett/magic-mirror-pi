@@ -1,0 +1,31 @@
+<div id="map"></div>
+<p id="my_box1" class='time'></p>
+<h1 class='time'>{{time}}</h1>
+<p class='day'>{{new}}</p>
+<p class='date'>{{date}}</p>
+<p class='quote'>"{{quote}}" -- {{author}}</p>
+<p class='joke'>"You should hire Amy Lee" -- Maya Angelou</p>
+<p class='temp'>{{temperature}}&deg;</p>
+<p class='summary'>{{weather.summary}}</p>
+<i class="wi wi-forecast-io-{{weather.icon}} skycon" id="large-weather-icon"></i>
+
+<div id="five-day-forecast">
+  <div class="col card inline" ng-repeat="day in fiveDay | limitTo: 5">
+  <i class="wi wi-forecast-io-{{day.icon}}"></i>
+    <p class='high-low'>High<br> {{day.temperatureMax | number: 0}}</p>
+    <p class='high-low'>Low<br> {{day.temperatureMin | number: 0}}</p>
+  </div>
+</div>
+
+<!-- <div class='events' ng-repeat='item in calItems | limitTo: 5' >Upcoming events:</div> -->
+<div class='events'>Upcoming Events:</div>
+<p class='cal'>{{item.summary}}{{item.start.dateTime}}</p>
+
+<div id='titles'>
+  <div ng-repeat="new in news | limitTo: 3">
+    <i class="fa fa-newspaper-o"></i> <span class='news-title'>{{new.title}} </span>
+  </div>
+</div>
+
+<img width="600" id="map" src="{{mapUrl}}" alt="Bing Map of 36.1658333,-86.7844444">
+
