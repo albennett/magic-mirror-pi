@@ -13,6 +13,12 @@ xset s noblank # don't blank the video device
 xsetroot -cursor /_MIRROR/system/emptyCursor.xbm /_MIRROR/system/emptyCursor.xbm
 killall omxplayer.bin
 echo "PRE!"
-/usr/bin/nice -n -20 /usr/bin/midori -e Fullscreen -a http://localhost:3000/#/
+#/usr/bin/nice -n -20 /usr/bin/midori -e Fullscreen -a http://127.0.0.1:3000/#/
+while :
+do
+	echo "STARTING midori"
+	/usr/bin/nice -n -20 /usr/bin/midori -e Fullscreen -a http://127.0.0.1
+	echo "midori DIED"
+done
 echo "POST!"
 clear > /dev/tty0

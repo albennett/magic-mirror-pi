@@ -10,25 +10,26 @@
   }
 
   #map {
-    height: 11%;
-    width: 48%;
-    position:absolute;
-    bottom:0;
-    margin-left: 90px;
-    margin-bottom: 69px;
+    height: 275px;
+    width: 550px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 31px;
+    margin-bottom: 36px;
+
   }
 
   #titles{
     position: absolute;
     visibility: visible;
-    left: 54%;
-    top: 76%;
-    width: 37%;
+    left: 2%;
+    top: 72%;
+    width: 52%;
     z-index: 200;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    font-size: 18px;
-    padding-left:10px;
+    font-size: 20px;
+    padding-left: 10px;
     color: #efefef;
   }
 
@@ -44,8 +45,8 @@
   #five-day-forecast{
     position: absolute;
     visibility: visible;
-    left: 68%;
-    top: 86%;
+    left: 66%;
+    top: 87%;
     z-index: 200;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
@@ -55,8 +56,8 @@
 
   .time{
     position: absolute;
-    top: 3%;
-    left: 5%;
+    top: 2%;
+    left: 4%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 60px;
@@ -65,8 +66,8 @@
 
   .temp{
     position: absolute;
-    right: 5%;
-    top: 3%;
+    right: 4%;
+    top: 2%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 60px;
@@ -75,14 +76,14 @@
 
   .skycon{
     position: absolute;
-    right: 15%;
-    top: 4%;
+    right: 16%;
+    top: 3%;
   }
 
   .summary{
     position: absolute;
-    right:6%;
-    top:9%;
+    right: 4%;
+    top: 8%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -91,8 +92,8 @@
 
   .day{
     position: absolute;
-    left: 6%;
-    top:9%;
+    left: 4%;
+    top: 7%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -101,8 +102,8 @@
 
   .date{
     position: absolute;
-    left:6%;
-    top: 11.5%;
+    left: 4%;
+    top: 9.5%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -116,10 +117,10 @@
 
   .quote{
     text-align: center;
-    width: 83%;
+    width: 78%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 291px;
+    padding-top: 295px;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -136,6 +137,7 @@
     font-weight: 400;
     font-size: 28px;
     color: #efefef;
+    padding-top: 5px;
   }
 
   #output{
@@ -157,11 +159,11 @@
 
   .events{
     position: absolute;
-    bottom: 22.5%;
+    bottom: 17%;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
-    left: 9%;
+    left: 65%;
     color: #efefef;
   }
 
@@ -176,15 +178,19 @@
     color: #efefef;
   }
 
-#large-weather-icon {
-    font-size: 90px;
-    content: "\f02e";
-    color: white;
-}
+  #large-weather-icon {
+      font-size: 95px;
+      content: "\f02e";
+      color: #efefef;
+  }
 
-.cal{
-  color: white;
-}
+  .cal{
+    color: #efefef;
+    width: 95%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
 
 }
 /**/

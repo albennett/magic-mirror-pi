@@ -17,12 +17,15 @@
   </div>
 </div>
 
-<!-- <div class='events' ng-repeat='item in calItems | limitTo: 5' >Upcoming events:</div> -->
-<div class='events'>Upcoming Events:</div>
-<p class='cal'>{{item.summary}}{{item.start.dateTime}}</p>
+<div class='events'>
+  <p class='cal'>{{itemTime4}}    |    {{calSummary4}}</p>
+  <p class='cal'>{{itemTime1}}    |    {{calSummary1}}</p>
+  <p class='cal'>{{itemTime3}}    |    {{calSummary3}}</p>
+  <p class='cal'>{{itemTime2}}    |    {{calSummary2}}</p>
+</div>
 
 <div id='titles'>
-  <div ng-repeat="new in news | limitTo: 3">
+  <div ng-repeat="new in news | limitTo: 4">
     <i class="fa fa-newspaper-o"></i> <span class='news-title'>{{new.title}} </span>
   </div>
 </div>

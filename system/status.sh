@@ -18,7 +18,7 @@ do
 
 	if [ -z "$ipaddrWlan" ]
         then
-          ipaddr="NOT CONNECTED"
+          ipaddrWlan="NOT CONNECTED"
         fi
 
         LASTIP=`cat /tmp/last-ip`

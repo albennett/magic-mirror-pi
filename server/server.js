@@ -2,6 +2,8 @@
 
 var TMP_DIR = '/tmp';
 
+var MY_DIR = __dirname;
+
 var express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -83,9 +85,10 @@ app.get('/api/quote', apicache('12 hours'), function (req, res){
   })
 });
 
-app.get('/api/map', apicache('10 mins'), function (req, res) {
-  var mapContent = fs.readFileSync("map.json");
+app.get('/api/map', function (req, res) {
+  var mapContent = fs.readFileSync(MY_DIR + "/map.json");
   var jsonMapContent = JSON.parse(mapContent);
+  jsonMapContent.mapUrl += "&amyleeDT=" + Date.now();
   console.log("contents", jsonMapContent);
   res.send(jsonMapContent);
 })
