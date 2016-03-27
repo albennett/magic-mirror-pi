@@ -31,7 +31,7 @@ sleep 10
 #for web display
 killall xinit
 killall midori
-/usr/bin/xinit /_MIRROR/startMidori.sh >/dev/null 2>&1 &
+/usr/bin/xinit /_MIRROR/startMidori.sh >/tmp/startMidori.sh.log 2>&1 &
 sleep 10
 killall omxplayer.bin
 
