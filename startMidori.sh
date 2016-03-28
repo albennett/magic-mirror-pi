@@ -18,7 +18,7 @@ while :
 do
 	echo "STARTING midori"
 	#/usr/bin/nice -n -20 /usr/bin/midori -e Fullscreen -a http://127.0.0.1
-	/usr/bin/nice -n -20 /usr/bin/midori -e Fullscreen -a http://127.0.0.1:3000/#/
+	/usr/bin/nice -n -20 /usr/bin/midori -e Fullscreen -a http://127.0.0.1:3000/#
 	echo "midori DIED"
 done
 echo "POST!"
