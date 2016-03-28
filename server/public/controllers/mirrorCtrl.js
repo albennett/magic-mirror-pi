@@ -24,9 +24,8 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
   quoteApi()
   setInterval(quoteApi, 10800000); //three hours
 
- function calendarApi (){
-  $http.get('api/calendar').success(function (response){
-    console.log("response", response.items[0].start.dateTime);
+  function calendarApi (){
+    $http.get('api/calendar').success(function (response){
       $scope.calSummary1 = response.items[0].summary;
       $scope.calSummary2 = response.items[1].summary;
       $scope.calSummary3 = response.items[2].summary;
@@ -35,7 +34,7 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
       $scope.itemTime2 = response.items[1].start.dateTime.slice(5,10);
       $scope.itemTime3 = response.items[2].start.dateTime.slice(5,10);
       $scope.itemTime4 = response.items[3].start.dateTime.slice(5,10);
-  });
+    });
   }
   calendarApi()
   setInterval(calendarApi, 1000000)
@@ -80,5 +79,18 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
   weekday[6] = "Saturday";
 
   $scope.new = weekday[d.getDay()];
+
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .hide()
+    .next()
+    .show()
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+
+
 
 }]);

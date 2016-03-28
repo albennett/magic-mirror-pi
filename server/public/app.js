@@ -5,6 +5,10 @@ myApp.config(function($routeProvider){
     controller: 'MirrorController',
     templateUrl: 'views/mirror.html'
   })
+  .when('/how',{
+    controller: 'MirrorController',
+    templateUrl: 'views/howto.html'
+  })
   .otherwise({
     redirectTo: '/'
   });
