@@ -42,7 +42,7 @@ function saveStatus(key, val, callback) {
 }
 
 function isPIDRunning(pid, callback) {
-	fs.stat('/proc/' + pid, function(sErr,sStats) {
+  fs.stat('/proc/' + pid, function(sErr,sStats) {
     if(sStats && sStats.isDirectory()) {
       callback(true);
     } else {
@@ -103,12 +103,11 @@ app.get('/api/calendar', apicache('12 hours'), function (req, res){
 });
 
 app.get('/api/status', function(req, res){
-	var output = {};
-	output.isOK = true;
-	output.gpioCenterVideo = gpioCenterVideo;
-	output.gpioStatus = gpioStatus;
-
-	res.send(output);
+  var output = {};
+  output.isOK = true;
+  output.gpioCenterVideo = gpioCenterVideo;
+  output.gpioStatus = gpioStatus;
+  res.send(output);
 });
 
 app.listen(PORT, function () {
@@ -116,7 +115,7 @@ app.listen(PORT, function () {
 });
 
 app.all('/', function () {
-console.log('connected');
+  console.log('connected');
 });
 
 
@@ -126,38 +125,37 @@ console.log('connected');
 var gpioCenterVideo = -1;
 
 function handleCenterVideoGPIOChange(val) {
-	console.log('CenterVideo is NOW:' + val); // The current state of the pin
-	gpioCenterVideo = val;
-		if (val === 0){
-			stopCenterVideo();
-		} else {
-			startCenterVideo();
-		}
+  console.log('CenterVideo is NOW:' + val); // The current state of the pin
+  gpioCenterVideo = val;
+  if (val === 0){
+    stopCenterVideo();
+  } else {
+  startCenterVideo();
+  }
 }
 
 var gCV = gpio.export(20, {
   direction: 'in', ready: function() {
-  	logDebug("gCV ready.");
-  	//there's a problem here: https://github.com/EnotionZ/GpiO/blob/master/lib/gpio.js
-  	//  in that it does not properly initialize (eg, upon start it never checks sanity to ensure button is not pressed [assumes it is NOT])
-  	gCV._get();
-  	setTimeout(function(){
-  		handleCenterVideoGPIOChange(gCV.value);
-  	}, 500);
+    logDebug("gCV ready.");
+    //there's a problem here: https://github.com/EnotionZ/GpiO/blob/master/lib/gpio.js
+    //  in that it does not properly initialize (eg, upon start it never checks sanity to ensure button is not pressed [assumes it is NOT])
+    gCV._get();
+    setTimeout(function(){
+      handleCenterVideoGPIOChange(gCV.value);
+    }, 500);
   }
 });
 
 gCV.on("change", handleCenterVideoGPIOChange);
 
 function stopCenterVideo(){
-	saveStatus('status_centerVideo',"0", function(errSave) {
-		if(errSave) {
-			logError(errSave);
-		}
+  saveStatus('status_centerVideo',"0", function(errSave) {
+    if(errSave) {
+      logError(errSave);
+    }
     fs.readFile('/tmp/centerVideo.pid', 'utf8', function(err, pidData){  //try and kill it either way...
-        if(pidData) {
-         exec('/bin/kill ' + pidData, function(){ });
-				}
+      if(pidData) {
+      exec('/bin/kill ' + pidData, function(){ });				}
     });
   });
 }
@@ -165,10 +163,10 @@ function stopCenterVideo(){
 function startCenterVideo(){
   isCenterVideoRunning(function(isRunning){
     if(!isRunning) {
-			saveStatus('status_centerVideo',"1", function(errSave) {
-				if(errSave) {
-					logError(errSave);
-				}
+      saveStatus('status_centerVideo',"1", function(errSave) {
+	if(errSave) {
+	  logError(errSave);
+	}
       exec('/_MIRROR/system/centerVideo.sh', function(){});
       });
     }
@@ -182,8 +180,8 @@ function isCenterVideoRunning (callback){
     } else {
       var pid = parseInt(pidData.trim());
       isPIDRunning(pid, function(isRunning) {
-				callback(isRunning);
-			});
+	callback(isRunning);
+      });
     }
   });
 }
@@ -193,23 +191,23 @@ function isCenterVideoRunning (callback){
 var gpioStatus = -1;
 
 function handleStatusGPIOChange(val) {
-	console.log('Status is NOW:' + val); // The current state of the pin
-	gpioStatus = val;
-	if (val === 0){
-		stopStatus();
-	} else {
-		startStatus();
-	}
+  console.log('Status is NOW:' + val); // The current state of the pin
+  gpioStatus = val;
+  if (val === 0){
+    stopStatus();
+  } else {
+    startStatus();
+  }
 }
 
 var gST = gpio.export(21, {
   direction: 'in', ready: function() {
-		logDebug("gST ready.");
-		gST._get();
-		setTimeout(function(){
-				handleStatusGPIOChange(gST.value);
-		}, 500);
-	}
+    logDebug("gST ready.");
+    gST._get();
+    setTimeout(function(){
+      handleStatusGPIOChange(gST.value);
+    }, 500);
+  }
 });
 
 gST.on("change", handleStatusGPIOChange);
@@ -217,20 +215,20 @@ gST.on("change", handleStatusGPIOChange);
 function isStatusRunning(callback){
   fs.readFile('/tmp/statusImage.pid', 'utf8', function(err, pidData) {
     if(!pidData) {
-			callback(false);
-		} else {
-			var pid = parseInt(pidData);
-  	  isPIDRunning(pid, function(isRunning) {
-				callback(isRunning);
-			});
+      callback(false);
+    } else {
+      var pid = parseInt(pidData);
+      isPIDRunning(pid, function(isRunning) {
+	callback(isRunning);
+      });
     }
-	});
+  });
 }
 
 function startStatus(){
-	logDebug("startStatus()");
+  logDebug("startStatus()");
   isStatusRunning(function(isRunning){
-		logDebug("startStatus - isRunning:" + isRunning);
+    logDebug("startStatus - isRunning:" + isRunning);
     if(!isRunning){
       exec('/_MIRROR/system/statusImage.sh', function(){
       });
@@ -239,6 +237,6 @@ function startStatus(){
 }
 
 function stopStatus(){
-	logDebug("stopStatus()");
+  logDebug("stopStatus()");
   exec('/usr/bin/killall fbi', function(){});
 }
