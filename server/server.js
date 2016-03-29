@@ -110,6 +110,10 @@ app.get('/api/status', function(req, res){
   res.send(output);
 });
 
+app.get('/api/how', function(req, res){
+  res.send(changeToHowToPage);
+});
+
 app.listen(PORT, function () {
   console.log('App listening on port ' + PORT);
 });
@@ -118,6 +122,34 @@ app.all('/', function () {
   console.log('connected');
 });
 
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// the howto
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+
+var gpioPageChange = -1;
+var changeToHowToPage = false;
+
+function handlePageChange(val){
+  gpioPageChange = val;
+  if (val === 0){
+    changeToHowToPage = false;
+  } else{
+    changeToHowToPage = true;
+  }
+}
+
+var gPG = gpio.export(16, {
+  direction: 'in', ready: function() {
+    logDebug("gPG ready.");
+    gPG._get();
+    setTimeout(function(){
+      handlePageChange(gPG.value);
+    }, 500);
+  }
+});
+
+gPG.on("change", handlePageChange);
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 // the center video

@@ -83,7 +83,7 @@
   .summary{
     position: absolute;
     right: 4%;
-    top: 8%;
+    top: 9%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -198,7 +198,7 @@
 
 #slideshow {
     margin: 50px auto;
-    position: relative;
+    /*position: relative;*/
     width: 240px;
     height: 240px;
     padding: 10px;
@@ -211,14 +211,13 @@
     left: 10px;
     right: 10px;
     bottom: 10px;
-    width: 100px;
-    height: 100px;
-
 }
 
 .size-image{
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 35.5%;
+  position: absolute;
+  bottom: 0px;
 }
 
 }

@@ -68,6 +68,23 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
   weatherApi()
   setInterval(weatherApi, 60000*2); //2 minutes
 
+  function howToPageLoad() {
+    $http.get('api/how').success(function(response){
+      console.log("response", response);
+      var pageLoadTrueOrFalse = response;
+
+      if (pageLoadTrueOrFalse){
+        window.location.href = "/#/how";
+      } else{
+        window.location.href = "/#/";
+      }
+    })
+  }
+  howToPageLoad();
+  setInterval(howToPageLoad, 3000);
+
+
+
   var d = new Date();
   var weekday = new Array(7);
   weekday[0]=  "Sunday";
