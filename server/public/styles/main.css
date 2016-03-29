@@ -14,17 +14,16 @@
     width: 550px;
     position: absolute;
     bottom: 0;
-    margin-left: 31px;
-    margin-bottom: 36px;
-
+    margin-left: 10px;
+    margin-bottom: 9px;
   }
 
   #titles{
     position: absolute;
     visibility: visible;
-    left: 2%;
+    left: 0%;
     top: 72%;
-    width: 52%;
+    width: 55%;
     z-index: 200;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
@@ -56,8 +55,8 @@
 
   .time{
     position: absolute;
-    top: 2%;
-    left: 4%;
+    top: 0%;
+    left: 2%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 60px;
@@ -66,8 +65,8 @@
 
   .temp{
     position: absolute;
-    right: 4%;
-    top: 2%;
+    right: 2%;
+    top: 0%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 60px;
@@ -76,14 +75,14 @@
 
   .skycon{
     position: absolute;
-    right: 16%;
-    top: 3%;
+    right: 12%;
+    top: 2%;
   }
 
   .summary{
     position: absolute;
-    right: 4%;
-    top: 9%;
+    right: 2%;
+    top: 6%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -92,8 +91,8 @@
 
   .day{
     position: absolute;
-    left: 4%;
-    top: 7%;
+    left: 2%;
+    top: 5%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -102,8 +101,8 @@
 
   .date{
     position: absolute;
-    left: 4%;
-    top: 9.5%;
+    left: 2%;
+    top: 7.5%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -117,10 +116,10 @@
 
   .quote{
     text-align: center;
-    width: 78%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 295px;
+    padding-top: 261px;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 28px;
