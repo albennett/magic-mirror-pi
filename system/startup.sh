@@ -6,7 +6,7 @@ cp /_MIRROR/img/* /tmp/.
 
 #creator for the ip / etc (imageMagick)
 killall status.sh
-/usr/bin/nohup /_MIRROR/system/status.sh >/tmp/status.sh.log 2>&1 &
+/usr/bin/nohup /_MIRROR/system/status.sh >/dev/null 2>&1 &
 
 #killall readNode.sh
 #readers for GPIO (switches)
@@ -31,7 +31,7 @@ sleep 10
 #for web display
 killall xinit
 killall midori
-/usr/bin/xinit /_MIRROR/startMidori.sh >/tmp/startMidori.sh.log 2>&1 &
+/usr/bin/xinit /_MIRROR/startMidori.sh >/dev/null 2>&1 &
 sleep 10
 killall omxplayer.bin
 

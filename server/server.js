@@ -172,7 +172,7 @@ var gCV = gpio.export(20, {
     //there's a problem here: https://github.com/EnotionZ/GpiO/blob/master/lib/gpio.js
     //  in that it does not properly initialize (eg, upon start it never checks sanity to ensure button is not pressed [assumes it is NOT])
     gCV._get();
-    setsout(function(){
+    setTimeout(function(){
       handleCenterVideoGPIOChange(gCV.value);
     }, 500);
   }

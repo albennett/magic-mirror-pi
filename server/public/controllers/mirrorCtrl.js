@@ -51,7 +51,6 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
   function newsApi () {
     $http.get('api/news').success(function (response) {
       $scope.news = response.results;
-      console.log("news updated");
     });
   }
   newsApi()
