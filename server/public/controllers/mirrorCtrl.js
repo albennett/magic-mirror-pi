@@ -46,7 +46,7 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
   });
   }
   mapApi()
-  setInterval(mapApi, 600000); //10 mins
+  setInterval(mapApi, 800000); //10 mins
 
   function newsApi () {
     $http.get('api/news').success(function (response) {
