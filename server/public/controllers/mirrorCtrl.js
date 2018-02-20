@@ -16,28 +16,33 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
 
   function quoteApi () {
     $http.get('api/quote').success(function (response){
-      $scope.quote = response.contents.quotes[0].quote;
-      $scope.author = response.contents.quotes[0].author;
+      $scope.quote = response.quoteText;
+      $scope.author = response.quoteAuthor;
       console.log("quote updated");
     });
   }
   quoteApi()
   setInterval(quoteApi, 10800000); //three hours
 
-  function calendarApi (){
-    $http.get('api/calendar').success(function (response){
-      $scope.calSummary1 = response.items[0].summary;
-      $scope.calSummary2 = response.items[1].summary;
-      $scope.calSummary3 = response.items[2].summary;
-      $scope.calSummary4 = response.items[3].summary;
-      $scope.itemTime1 = response.items[0].start.dateTime.slice(5,10);
-      $scope.itemTime2 = response.items[1].start.dateTime.slice(5,10);
-      $scope.itemTime3 = response.items[2].start.dateTime.slice(5,10);
-      $scope.itemTime4 = response.items[3].start.dateTime.slice(5,10);
-    });
+  function imageApi(){
+    $scope.dailyImg = "https://source.unsplash.com/category/nature/daily";
   }
-  calendarApi()
-  setInterval(calendarApi, 1000000)
+  setInterval(imageApi, 86400000);
+  // function calendarApi (){
+  //   $http.get('api/calendar').success(function (response){
+  //     var books = body.results;
+  //     // $scope.calSummary1 = response.items[0].summary;
+  //     // $scope.calSummary2 = response.items[1].summary;
+  //     // $scope.calSummary3 = response.items[2].summary;
+  //     // $scope.calSummary4 = response.items[3].summary;
+  //     // $scope.itemTime1 = response.items[0].start.dateTime.slice(5,10);
+  //     // $scope.itemTime2 = response.items[1].start.dateTime.slice(5,10);
+  //     // $scope.itemTime3 = response.items[2].start.dateTime.slice(5,10);
+  //     // $scope.itemTime4 = response.items[3].start.dateTime.slice(5,10);
+  //   });
+  // }
+  // calendarApi()
+  // setInterval(calendarApi, 1000000)
 
   function mapApi () {
   $http.get('api/map').success(function (response){
@@ -50,7 +55,7 @@ myApp.controller('MirrorController', ['$scope', '$http','$routeParams', '$q', fu
 
   function newsApi () {
     $http.get('api/news').success(function (response) {
-      $scope.news = response.results;
+      $scope.news = response.articles;
     });
   }
   newsApi()

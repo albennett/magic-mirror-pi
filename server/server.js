@@ -14,9 +14,11 @@ var gpio = require('gpio');
 var apicache = require('apicache').options({ debug: true }).middleware;
 var key = require('/_MIRROR/conf/apikeys.conf.js');
 var weatherUrl = 'https://api.forecast.io/forecast/' + key.weatherKey + '/36.1820800,-86.7278270'
-var newsUrl = 'http://api.nytimes.com/svc/topstories/v1/world.json?api-key=' + key.newsKey;
-var quoteUrl = 'http://quotes.rest/qod.json';
-var calendarUrl = key.calUrl;
+var newsUrl = 'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=' + 'e7890f76dc964c428a0b1ce2e372f492';
+var quoteUrl = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+// var quoteUrl = 'http://quotes.rest/qod.json';
+// var calendarUrl = key.calUrl;
+var NYTimesKey = '6b33eb7b78a214401d2766c100aeae6a:5:74631439';
 
 var spawn = require('child_process').spawn;
 
@@ -93,14 +95,20 @@ app.get('/api/map', function (req, res) {
   res.send(jsonMapContent);
 })
 
-app.get('/api/calendar', apicache('12 hours'), function (req, res){
-  request.get(calendarUrl, function (err, response, body){
-    if (err) throw err;
-    var calendar = JSON.parse(body);
-    console.log("cal",calendar);
-    res.send(calendar)
-  })
-});
+// app.get('/api/image', function (req, res) {
+// 	request.get()
+// })
+
+// app.get('/api/calendar', apicache('12 hours'), function (req, res){
+// 	request.get({
+// 	  url: "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json",
+// 	  qs: {
+// 	    'api-key': '6b33eb7b78a214401d2766c100aeae6a:5:74631439';
+// 	  },
+// 	}, function(err, response, body) {
+// 	  res.send(body);
+// 	})
+// });
 
 app.get('/api/status', function(req, res){
   var output = {};

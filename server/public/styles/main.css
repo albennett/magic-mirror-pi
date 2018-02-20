@@ -195,6 +195,12 @@
   color: white;
 }
 
+.ring {
+  margin-right: 250px;
+  opacity: 0.3;
+  max-height: 500px;
+}
+
 #slideshow {
     margin: 50px auto;
     /*position: relative;*/
@@ -218,6 +224,23 @@
   position: absolute;
   bottom: 0px;
 }
+
+daily-img{
+  max-width:100%;
+  max-height:100%;
+}
+image-a-day{
+  height: 250px;
+  width: 600px
+
+}
+
+/*.ring-girl{
+  opacity: 0.7;
+  margin-top: 400px;
+  margin-left: 300px;
+  height: 1700px;
+}*/
 
 }
 /**/
